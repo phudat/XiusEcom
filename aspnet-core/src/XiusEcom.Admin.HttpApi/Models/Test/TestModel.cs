@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XiusEcom.Models.Test;
+namespace XiusEcom.Admin.Models.Test;
 
 public class TestModel
 {

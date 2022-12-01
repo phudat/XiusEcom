@@ -21,7 +21,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="6.0.1" />
     <PackageReference Include="Volo.Abp.Autofac" Version="6.0.1" />
-    <ProjectReference Include="..\..\src\XiusEcom.HttpApi.Client\XiusEcom.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\src\XiusEcom.Admin.HttpApi.Client\XiusEcom.Admin.HttpApi.Client.csproj" />
   </ItemGroup>
 
   <ItemGroup>

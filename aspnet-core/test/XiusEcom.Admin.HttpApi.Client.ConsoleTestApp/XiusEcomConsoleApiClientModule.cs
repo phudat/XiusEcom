@@ -5,12 +5,13 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Http.Client.IdentityModel;
 using Volo.Abp.Modularity;
+using XiusEcom.Admin;
 
-namespace XiusEcom.HttpApi.Client.ConsoleTestApp;
+namespace XiusEcom.Admin.HttpApi.Client.ConsoleTestApp;
 
 [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(XiusEcomHttpApiClientModule),
+    typeof(XiusEcomAdminHttpApiClientModule),
     typeof(AbpHttpClientIdentityModelModule)
     )]
 public class XiusEcomConsoleApiClientModule : AbpModule

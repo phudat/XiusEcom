@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace XiusEcom.HttpApi.Client.ConsoleTestApp;
+namespace XiusEcom.Admin.HttpApi.Client.ConsoleTestApp;
 
 class Program
 {

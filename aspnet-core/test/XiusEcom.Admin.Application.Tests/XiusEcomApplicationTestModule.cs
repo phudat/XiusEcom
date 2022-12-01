@@ -1,9 +1,9 @@
 ﻿using Volo.Abp.Modularity;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 [DependsOn(
-    typeof(XiusEcomApplicationModule),
+    typeof(XiusEcomAdminApplicationModule),
     typeof(XiusEcomDomainTestModule)
     )]
 public class XiusEcomApplicationTestModule : AbpModule

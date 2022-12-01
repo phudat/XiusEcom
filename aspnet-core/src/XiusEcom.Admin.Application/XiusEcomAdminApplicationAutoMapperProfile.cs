@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
-public class XiusEcomApplicationAutoMapperProfile : Profile
+public class XiusEcomAdminApplicationAutoMapperProfile : Profile
 {
-    public XiusEcomApplicationAutoMapperProfile()
+    public XiusEcomAdminApplicationAutoMapperProfile()
     {
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations

@@ -1,7 +1,7 @@
 ﻿using XiusEcom.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace XiusEcom.Controllers;
+namespace XiusEcom.Admin.Controllers;
 
 /* Inherit your controllers from this class.
  */

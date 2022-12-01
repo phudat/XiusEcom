@@ -1,4 +1,4 @@
-﻿namespace XiusEcom.Permissions;
+﻿namespace XiusEcom.Admin.Permissions;
 
 public static class XiusEcomPermissions
 {

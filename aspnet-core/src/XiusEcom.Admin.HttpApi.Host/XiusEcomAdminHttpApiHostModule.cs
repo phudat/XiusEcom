@@ -29,7 +29,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 [DependsOn(
     typeof(XiusEcomHttpApiModule),
@@ -37,12 +37,12 @@ namespace XiusEcom;
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpDistributedLockingModule),
     typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
-    typeof(XiusEcomApplicationModule),
+    typeof(XiusEcomAdminApplicationModule),
     typeof(XiusEcomEntityFrameworkCoreModule),
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule)
 )]
-public class XiusEcomHttpApiHostModule : AbpModule
+public class XiusEcomAdminHttpApiHostModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
@@ -62,7 +62,7 @@ public class XiusEcomHttpApiHostModule : AbpModule
 
     private void ConfigureCache(IConfiguration configuration)
     {
-        Configure<AbpDistributedCacheOptions>(options => { options.KeyPrefix = "XiusEcom:"; });
+        Configure<AbpDistributedCacheOptions>(options => { options.KeyPrefix = "XiusEcom.Admin:"; });
     }
 
     private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
@@ -81,10 +81,10 @@ public class XiusEcomHttpApiHostModule : AbpModule
                         $"..{Path.DirectorySeparatorChar}XiusEcom.Domain"));
                 options.FileSets.ReplaceEmbeddedByPhysical<XiusEcomApplicationContractsModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}XiusEcom.Application.Contracts"));
-                options.FileSets.ReplaceEmbeddedByPhysical<XiusEcomApplicationModule>(
+                        $"..{Path.DirectorySeparatorChar}XiusEcom.Admin.Application.Contracts"));
+                options.FileSets.ReplaceEmbeddedByPhysical<XiusEcomAdminApplicationModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}XiusEcom.Application"));
+                        $"..{Path.DirectorySeparatorChar}XiusEcom.Admin.Application"));
             });
         }
     }
@@ -93,7 +93,7 @@ public class XiusEcomHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(XiusEcomApplicationModule).Assembly);
+            options.ConventionalControllers.Create(typeof(XiusEcomAdminApplicationModule).Assembly);
         });
     }
 
@@ -104,7 +104,7 @@ public class XiusEcomHttpApiHostModule : AbpModule
             {
                 options.Authority = configuration["AuthServer:Authority"];
                 options.RequireHttpsMetadata = Convert.ToBoolean(configuration["AuthServer:RequireHttpsMetadata"]);
-                options.Audience = "XiusEcom";
+                options.Audience = "XiusEcom.Admin";
             });
     }
 
@@ -114,11 +114,11 @@ public class XiusEcomHttpApiHostModule : AbpModule
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
             {
-                    {"XiusEcom", "XiusEcom API"}
+                    {"XiusEcom.Admin", "XiusEcom Admin API"}
             },
             options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "XiusEcom API", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "XiusEcom Admin API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
@@ -156,7 +156,7 @@ public class XiusEcomHttpApiHostModule : AbpModule
         IConfiguration configuration,
         IWebHostEnvironment hostingEnvironment)
     {
-        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("XiusEcom");
+        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("XiusEcom.Admin");
         if (!hostingEnvironment.IsDevelopment())
         {
             var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
@@ -225,7 +225,7 @@ public class XiusEcomHttpApiHostModule : AbpModule
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "XiusEcom API");
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "XiusEcom Admin API");
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);

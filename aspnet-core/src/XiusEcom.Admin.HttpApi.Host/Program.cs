@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 public class Program
 {
@@ -27,12 +27,12 @@ public class Program
 
         try
         {
-            Log.Information("Starting XiusEcom.HttpApi.Host.");
+            Log.Information("Starting XiusEcom.Admin.HttpApi.Host.");
             var builder = WebApplication.CreateBuilder(args);
             builder.Host.AddAppSettingsSecretsJson()
                 .UseAutofac()
                 .UseSerilog();
-            await builder.AddApplicationAsync<XiusEcomHttpApiHostModule>();
+            await builder.AddApplicationAsync<XiusEcomAdminHttpApiHostModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();

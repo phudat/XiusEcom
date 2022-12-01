@@ -7,7 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 [DependsOn(
     typeof(XiusEcomDomainModule),
@@ -19,13 +19,13 @@ namespace XiusEcom;
     typeof(AbpFeatureManagementApplicationModule),
     typeof(AbpSettingManagementApplicationModule)
     )]
-public class XiusEcomApplicationModule : AbpModule
+public class XiusEcomAdminApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpAutoMapperOptions>(options =>
         {
-            options.AddMaps<XiusEcomApplicationModule>();
+            options.AddMaps<XiusEcomAdminApplicationModule>();
         });
     }
 }

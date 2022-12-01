@@ -8,7 +8,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.VirtualFileSystem;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 [DependsOn(
     typeof(XiusEcomApplicationContractsModule),
@@ -19,7 +19,7 @@ namespace XiusEcom;
     typeof(AbpFeatureManagementHttpApiClientModule),
     typeof(AbpSettingManagementHttpApiClientModule)
 )]
-public class XiusEcomHttpApiClientModule : AbpModule
+public class XiusEcomAdminHttpApiClientModule : AbpModule
 {
     public const string RemoteServiceName = "Default";
 
@@ -32,7 +32,7 @@ public class XiusEcomHttpApiClientModule : AbpModule
 
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            options.FileSets.AddEmbedded<XiusEcomHttpApiClientModule>();
+            options.FileSets.AddEmbedded<XiusEcomAdminHttpApiClientModule>();
         });
     }
 }

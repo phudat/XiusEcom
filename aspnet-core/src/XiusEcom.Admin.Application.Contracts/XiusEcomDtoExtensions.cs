@@ -2,7 +2,7 @@
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 public static class XiusEcomDtoExtensions
 {

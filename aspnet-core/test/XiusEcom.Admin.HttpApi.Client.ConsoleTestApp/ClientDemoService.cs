@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Account;
 using Volo.Abp.DependencyInjection;
 
-namespace XiusEcom.HttpApi.Client.ConsoleTestApp;
+namespace XiusEcom.Admin.HttpApi.Client.ConsoleTestApp;
 
 public class ClientDemoService : ITransientDependency
 {

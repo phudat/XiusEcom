@@ -4,13 +4,13 @@ using System.Text;
 using XiusEcom.Localization;
 using Volo.Abp.Application.Services;
 
-namespace XiusEcom;
+namespace XiusEcom.Admin;
 
 /* Inherit your application services from this class.
  */
-public abstract class XiusEcomAppService : ApplicationService
+public abstract class XiusEcomAdminAppService : ApplicationService
 {
-    protected XiusEcomAppService()
+    protected XiusEcomAdminAppService()
     {
         LocalizationResource = typeof(XiusEcomResource);
     }

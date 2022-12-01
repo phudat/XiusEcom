@@ -4,12 +4,12 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>XiusEcom</RootNamespace>
+    <RootNamespace>XiusEcom.Admin</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\XiusEcom.Domain\XiusEcom.Domain.csproj" />
-    <ProjectReference Include="..\XiusEcom.Application.Contracts\XiusEcom.Application.Contracts.csproj" />
+    <ProjectReference Include="..\XiusEcom.Admin.Application.Contracts\XiusEcom.Admin.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

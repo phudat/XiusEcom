@@ -2,7 +2,7 @@
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
-namespace XiusEcom.Permissions;
+namespace XiusEcom.Admin.Permissions;
 
 public class XiusEcomPermissionDefinitionProvider : PermissionDefinitionProvider
 {
