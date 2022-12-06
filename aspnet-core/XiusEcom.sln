@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{CB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{BB06CEB0-F500-4E8D-BDB2-46AE358B1A33}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{6618580C-F430-4965-AF92-7E09EBBD0668}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{6618580C-F430-4965-AF92-7E09EBBD0668}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiusEcom.Admin.Application", "src\XiusEcom.Admin.Application\XiusEcom.Admin.Application.csproj", "{A9510ED1-2341-4AF5-91EF-291786E0602F}"
 EndProject
